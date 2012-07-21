@@ -111,10 +111,10 @@ namespace ParametricCurves
             t2.Y = t2.Y - p2.Y;
             Point old = p1;
             for (double t=0.0; t < 1.0; t += 0.01) {
-                double h1 = 2 * Math.Pow (t, 3) - 3 * Math.Pow (t, 2) + 1;          // calculate basis function 1
-                double h2 = -2 * Math.Pow (t, 3) + 3 * Math.Pow (t, 2);              // calculate basis function 2
-                double h3 = (Math.Pow (t, 3)) - 2 * Math.Pow (t, 2) + t;         // calculate basis function 3
-                double h4 = Math.Pow (t, 3) - Math.Pow (t, 2);              // calculate basis function 4
+                double h1 = -1 * Math.Pow(t, 3) + 3 * Math.Pow(t, 2) - (3 * t) + 1;          // calculate basis function 1
+                double h2 = 3 * Math.Pow(t, 3) - 6 * Math.Pow(t, 2) + (3 * t) + 0;              // calculate basis function 2
+                double h3 = -3 * Math.Pow(t, 3) + 3 * Math.Pow(t, 2) + (0 * t) + 0;         // calculate basis function 3
+                double h4 = 1 * Math.Pow(t, 3) + 0 * Math.Pow(t, 2) + (0 * t) + 0;              // calculate basis function 4
                 var a = new Point (
                     (int)(h1 * p1.X + h2 * p2.X + h3 * t1.X + h4 * t2.X),
                     (int)(h1 * p1.Y + h2 * p2.Y + h3 * t1.Y + h4 * t2.Y)
@@ -124,6 +124,6 @@ namespace ParametricCurves
             }
 //        
         }
-    }
+    } 
 }
 
